@@ -28,6 +28,8 @@ namespace Movie.API.Controllers
         {
             try
             {
+                _logger.LogInformation(Newtonsoft.Json.JsonConvert.SerializeObject(authInfo));
+                
                 return Ok(_movieService.Login(authInfo));
             }
             catch (System.Exception ex)

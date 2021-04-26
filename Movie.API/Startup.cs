@@ -42,8 +42,8 @@ namespace Movie.API
                 swagger.SwaggerDoc("v1", new OpenApiInfo
                 {
                     Version = "v1",
-                    Title = "JWT Token Authentication API",
-                    Description = "ASP.NET Core 3.1 Web API"
+                    Title = "Movie Database API",
+                    Description = "Movie Database API"
                 });
                 // To Enable authorization using Swagger (JWT)  
                 swagger.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme()
@@ -116,7 +116,7 @@ namespace Movie.API
 
             app.UseSwaggerUI(c =>
             {
-                c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Movie Database API");
             });
 
             app.UseRouting();

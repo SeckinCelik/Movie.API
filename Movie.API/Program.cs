@@ -31,6 +31,11 @@ namespace Movie.API
                     });
                     services.AddQuartzHostedService(
                         q => q.WaitForJobsToComplete = true);
+
+                }).ConfigureLogging(builder =>
+                {
+                    builder.SetMinimumLevel(LogLevel.Trace);
+                    builder.AddLog4Net("log4net.config");
                 });
     }
 }
